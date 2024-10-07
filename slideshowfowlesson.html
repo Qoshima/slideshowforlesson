@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slideshow</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        var images = [
+            'https://drive.google.com/file/d/1rNfm6sE1osPAeWopV5pZ3yPi4GxKYLYr/view?usp=drive_link', // Замени на свои ссылки
+            'https://drive.google.com/file/d/1QrD6_Yd6t69h_Jap1BpZ41_zQwYbPPCe/view?usp=drive_link',
+            'https://drive.google.com/file/d/1bP2ZoDU6zRD7htDd9nfreWZCqmlVJDt5/view?usp=sharing',
+            'https://drive.google.com/file/d/1FE_skS06wZOrh9Sji8a-y3BXlrcw6Sfn/view?usp=sharing',
+            'https://drive.google.com/file/d/1lLc7RGMq58ye0BB4g55s8-ri9Lmu-MDG/view?usp=sharing',
+            'https://drive.google.com/file/d/1TX4BjHOG-_pOIsfJQTfpPH5RV8afib-N/view?usp=sharing',
+            'https://drive.google.com/file/d/1adM9EhIFsBfCaAUJwQLZLRY0Hkqa4ROw/view?usp=sharing'
+        ];
+        var index = 0;
+
+        function showNextImage() {
+            var imgElement = document.getElementById("slideshow");
+            imgElement.src = images[index];
+            index = (index + 1) % images.length;
+        }
+
+        setInterval(showNextImage, 60000); // Меняет изображение каждые 3 секунды
+    </script>
+</head>
+<body onload="showNextImage()">
+    <img id="slideshow" src="" alt="Slideshow">
+</body>
+</html>
